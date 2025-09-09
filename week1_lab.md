@@ -16,9 +16,9 @@ Try to understand how Scheme interprets what you type.
 '(good morning)
 (first 274)
 (butfirst 274)
-(first ’hello)
+(first 'hello)
 (first hello)
-(first (bf ’hello))
+(first (bf 'hello))
 (+ (first 23) (last 45))
 (define pi 3.14159)
 pi
