@@ -51,5 +51,4 @@ Then try it and make sure your answer was correct, or if not, that you understan
 ((if (< a b) + -) a b)
 ```
 
-3. Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two
-larger numbers.
+3. Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
