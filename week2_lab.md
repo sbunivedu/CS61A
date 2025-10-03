@@ -12,7 +12,7 @@ You can think of `lambda` as meaning “the function of...,” e.g., “the func
 
 ```scheme
 (define (make-adder num)
-(lambda (x) (+ x num)))
+  (lambda (x) (+ x num)))
 ((make-adder 3) 7)
 (define plus3 (make-adder 3))
 (plus3 7)
