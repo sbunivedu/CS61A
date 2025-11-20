@@ -84,3 +84,45 @@
 ;(card-suit 49) => 'diamond
 ```
 
+#lang simply-scheme
+
+(define (total hand)
+  (if (empty? hand)
+      0
+      (+ (card-rank (one-card hand))
+         (total (remaining-cards hand)) )))
+
+; We have changed the internal representation so that a card is now just a number between 1 and 52.
+(define (make-card rank suit)
+  (cond ((equal? suit 'heart) rank)
+        ((equal? suit 'spade) (+ rank 13))
+        ((equal? suit 'diamond) (+ rank 26))
+        ((equal? suit 'club) (+ rank 39))
+        (else (error "say what?")) ))
+
+(define make-hand se)
+
+(define one-card last)
+
+(define remaining-cards butlast)
+
+; new selectors that work with the new representation
+
+(define (card-rank card)
+  (remainder card 13))
+
+(define (card-suit card)
+  (nth (+ (quotient card 13) 1) '(heart spade diamond club)))
+
+(define nth item)
+
+(total (make-hand (make-card 3 'heart)
+                  (make-card 10 'club)
+                  (make-card 4 'diamond)))
+; => 17 as before
+
+;(card-rank 49) => 10
+;(card-suit 49) => 'club
+;(card-rank (make-card 10 'club)) => 10
+;(card-suit (make-card 10 'club)) => 'club
+;(card-suit (make-card 4 'diamond)) => 'diamond
